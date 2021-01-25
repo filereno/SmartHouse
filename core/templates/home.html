@@ -1,0 +1,305 @@
+{% load static %}
+<div class="home">
+	<div class="fire-system">  
+
+		<h2>Sistemas de Segurança</h2>
+		<div class="alarm background-standard">  
+			<div>
+				
+				<span><svg><use xlink:href="{% static 'svg/sprites.svg' %}#casa"></use></svg></span>
+				<!-- <span><i class="icon-up fad fa-house"></i></span> -->
+				<div>
+					<h5 class="text-test text-alarm">Alarme</h5>
+					<h6 id="status-alarm">Status</h6>
+				</div>
+			</div>
+			<div>
+				<div>
+					<input type="checkbox" id="switch-alarm" class="checkbox-button" /> 
+					<label for="switch-alarm" id="button-alarm" class="toggle-button">
+						<p>ON</p> 
+						<p>OFF</p>
+					</label> 
+				</div>
+			</div>
+			
+		</div>
+		<div class="smoke background-standard"> 
+			<div>
+				<span><svg><use xlink:href="{% static 'svg/sprites.svg' %}#smoke-sensor"></use></svg></span>
+				<!-- <span><i class="icon-up fas fa-sensor-smoke"></i></span>  -->
+				<div>
+					<h5 class="text-test text-smoke">Detector de fumaça</h5>
+					<h6 id="status-smoke">Status</h6>
+				</div>
+			</div>
+			<div>
+				<div>
+					<input type="checkbox" id="switch-smoke" class="checkbox-button" /> 
+					<label for="switch-smoke" id="button-smoke" class="toggle-button">
+						<p>ON</p> 
+						<p>OFF</p>
+					</label> 
+				</div>
+			</div>
+		</div>
+		<div class="gas background-standard">  
+			<div>
+				<span><svg><use xlink:href="{% static 'svg/sprites.svg' %}#gas-sensor"></use></svg></span>
+				<!-- <span><i class="icon-up fas fa-sensor-smoke"></i></span> -->
+				<div>
+					<h5 class="text-test text-gas">Detector de gas</h5>
+					<h6 id="status-gas">Status</h6>
+				</div>
+			</div>
+			<div>
+				<div>
+					<input type="checkbox" id="switch-gas" class="checkbox-button" /> 
+					<label for="switch-gas" id="button-gas" class="toggle-button">
+						<p>ON</p> 
+						<p>OFF</p>
+					</label> 
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="garage">  
+
+		<h2>Garagem</h2>
+		<div class="gate-garage background-standard">  
+			<div>
+				<span><svg><use xlink:href="{% static 'svg/sprites.svg' %}#grid"></use></svg></i></span>
+				<div>
+					<h5 class="text-test">Portão da grade</h5>
+					<h6 class="status">Status</h6>
+				</div>
+			</div>
+			<div class="load-gate">
+				<div class="progress-gate">
+					<div id="bar-gate">
+
+					</div>
+				</div>
+			</div>
+			<div>
+				<div>
+					<input type="checkbox" id="switch-gate-garage" class="checkbox-button-oc" /> 
+					<label for="switch-gate-garage" id="button-gate" class="toggle-button-oc">
+						<p>OPEN</p> 
+						<p>CLOSE</p>
+					</label> 
+				</div>
+			</div>
+		</div>
+		
+		<div class="grid-garage background-standard">  
+			<div>
+				<span><svg><use xlink:href="{% static 'svg/sprites.svg' %}#garage"></use></svg></i></span>
+				<div>
+					<h5 class="text-test">Portão da garagem</h5>
+					<h6 class="status">Status</h6>
+				</div>
+			</div>
+			<div class="load-grid">
+				<div class="progress-grid">
+					<div id="bar-grid">
+
+					</div>
+				</div>
+			</div>
+			<div>  
+				<div>
+					<input type="checkbox" id="switch-grid-garage" class="checkbox-button-oc" /> 
+					<label for="switch-grid-garage" id="button-grid" class="toggle-button-oc">
+						<p>OPEN</p> 
+						<p>CLOSE</p>
+					</label> 
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="light-int background-standard">  
+		<h2>Luzes Interiores</h2>
+		<div id="list-int">
+			<ul>
+				<li>
+					<span><svg id="dining-room" class="icon-low"><use xlink:href="{% static 'svg/sprites.svg' %}#led-lamp"></use></svg></span>
+					<!-- <span><i id="dining-room"  class="icon-low fas fa-lightbulb"></i></span> -->
+					<h5> Sala de jantar </h5>
+					<!-- <h5 class="dining-room text-low">Sala de jantar</h5> -->
+					<div>
+						<div>
+							<input type="checkbox" id="switch-dining-room" class="checkbox-button" /> 
+							<label for="switch-dining-room" id="buttom-dining-room" class="toggle-button">
+								<p>ON</p> 
+								<p>OFF</p>
+							</label> 
+						</div>
+					</div>
+
+				</li>
+				<li>
+					<span><svg id="living-room" class="icon-low"><use xlink:href="{% static 'svg/sprites.svg' %}#led-lamp"></use></svg></span>
+					<!-- <span class="icon"><i id="living-room" class="icon-low fas fa-lightbulb"></i></span> -->
+					<h5> Sala de estar </h5>
+					<!-- <h5 class="living-room text-low">Sala de estar</h5> -->
+					<div> 
+						<div>
+							<input type="checkbox" id="switch-living-room" class="checkbox-button" /> 
+							<label for="switch-living-room" id="buttom-living-room" class="toggle-button">
+								<p>ON</p> 
+								<p>OFF</p>
+							</label> 
+						</div>
+					</div> 
+				</li>
+				<li>
+					<span><svg id="kitchen" class="icon-low"><use xlink:href="{% static 'svg/sprites.svg' %}#led-lamp"></use></svg></span>
+					<!-- <span class="icon"><i id="kitchen" class="icon-low fas fa-lightbulb"></i></span> -->
+					<h5> Cozinha </h5>
+					<!-- <h5 class="kitchen text-low">Cozinha</h5> -->
+					<div>
+						<div>
+							<input type="checkbox" id="switch-kitchen" class="checkbox-button" /> 
+							<label for="switch-kitchen" id="buttonm-switch-kitchen" class="toggle-button">
+								<p>ON</p> 
+								<p>OFF</p>
+							</label> 
+						</div>
+					</div>
+				</li>
+				<li>
+					<span><svg id="double-suite" class="icon-low"><use xlink:href="{% static 'svg/sprites.svg' %}#led-lamp"></use></svg></span>
+					<!-- <span class="icon"><i id="double-suite" class="icon-low fas fa-lightbulb"></i></span> -->
+					<h5> Suite de casal </h5>
+					<!-- <h5 class="double-suite text-low">Suite de casal</h5> -->
+					<div>
+						<div>
+							<input type="checkbox" id="switch-double-suite" class="checkbox-button" /> 
+							<label for="switch-double-suite" id="button-double-suite" class="toggle-button">
+								<p>ON</p> 
+								<p>OFF</p>
+							</label> 
+						</div>
+					</div>
+				</li>
+				<li>
+					<span><svg id="suite-bathroom" class="icon-low"><use xlink:href="{% static 'svg/sprites.svg' %}#led-lamp"></use></svg></span>
+					<!-- <span class="icon"><i id="suite-bathroom" class="icon-low fas fa-lightbulb"></i></span> -->
+					<h5> Banheiro da suíte </h5>
+					<!-- <h5 class="suite-bathroom text-low">Banheiro da suíte</h5> -->
+					<div>
+						<div>
+							<input type="checkbox" id="switch-suite-bathroom" class="checkbox-button" /> 
+							<label for="switch-suite-bathroom" id="button-suite-bathroom" class="toggle-button">
+								<p>ON</p> 
+								<p>OFF</p>
+							</label> 
+						</div>
+					</div>
+				</li>
+				<li>
+					<span><svg id="bedroom" class="icon-low"><use xlink:href="{% static 'svg/sprites.svg' %}#led-lamp"></use></svg></span>
+					<!-- <span class="icon"><i id="bedroom" class="icon-low fas fa-lightbulb"></i></span> -->
+					<h5> Quarto </h5>
+					<!-- <h5 class="bedroom text-low">Quarto</h5> -->
+					<div>
+						<div>
+							<input type="checkbox" id="switch-bedroom" class="checkbox-button" /> 
+							<label for="switch-bedroom" id="button-bedroom" class="toggle-button">
+								<p>ON</p> 
+								<p>OFF</p>
+							</label> 
+						</div>
+					</div>
+				</li>
+				<li>
+					<span><svg id="bathroom" class="icon-low"><use xlink:href="{% static 'svg/sprites.svg' %}#led-lamp"></use></svg></span>
+					<!-- <span class="icon"><i id="bathroom" class="icon-low fas fa-lightbulb"></i></span> -->
+					<h5> Banheiro </h5>
+					<!-- <h5 class="bathroom text-low">Banheiro</h5> -->
+					<div>
+						<div>
+							<input type="checkbox" id="switch-bathroom" class="checkbox-button" /> 
+							<label for="switch-bathroom" id="butonn-bathroom" class="toggle-button">
+								<p>ON</p> 
+								<p>OFF</p>
+							</label> 
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="light-ext"> 
+
+		<h2>Luzes Exteriores</h2>
+		<div class="background-standard">  
+			<div>
+				<span><svg id="ext-front" class= "icon-low"><use xlink:href="{% static 'svg/sprites.svg' %}#led-lamp"></use></svg></span>
+				<!-- <span><i class="icon-low fas fa-lightbulb"></i></span> -->
+				<h5 class="text-test">Frente</h5>
+			</div>
+			
+			<div>
+				<div>
+					<input type="checkbox" id="switch-ext-front" class="checkbox-button" /> 
+					<label for="switch-ext-front" id="button-ext-front" class="toggle-button">
+						<p>ON</p> 
+						<p>OFF</p>
+					</label> 
+				</div>
+			</div>
+			
+		</div>
+		<div class="background-standard">  
+			<div>
+				<span><svg id="ext-back" class="icon-low"><use xlink:href="{% static 'svg/sprites.svg' %}#led-lamp"></use></svg></span>
+				<!-- <span><i class="icon-low fas fa-lightbulb"></i></span> -->
+				<h5 class="text-test">Fundos</h5>
+			</div>
+			<div>
+				<div>
+					<input type="checkbox" id="switch-ext-back" class="checkbox-button" /> 
+					<label for="switch-ext-back" id="button-ext-back" class="toggle-button">
+						<p>ON</p> 
+						<p>OFF</p>
+					</label> 
+				</div>
+			</div>
+		</div>
+		<div class="background-standard">  
+			<div>
+				<span><svg id="ext-hall" class="icon-low"><use xlink:href="{% static 'svg/sprites.svg' %}#led-lamp"></use></svg></span>
+				<!-- <span><i class="icon-low fas fa-lightbulb"></i></span> -->
+				<h5 class="text-test">Corredor</h5>
+			</div>
+			<div>
+				<div>
+					<input type="checkbox" id="switch-ext-hall" class="checkbox-button" /> 
+					<label for="switch-ext-hall" id="button-ext-hall" class="toggle-button">
+						<p>ON</p> 
+						<p>OFF</p>
+					</label> 
+				</div>
+			</div>
+		</div>
+		<div class="background-standard">  
+			<div>
+				<span><svg id="ext-garage" class="icon-low"><use xlink:href="{% static 'svg/sprites.svg' %}#led-lamp"></use></svg></span>
+				<!-- <span><i class="icon-low fas fa-lightbulb"></i></span> -->
+				<h5 class="text-test">Garagem</h5>
+			</div>
+			<div>
+				<div>
+					<input type="checkbox" id="switch-ext-garage" class="checkbox-button" /> 
+					<label for="switch-ext-garage" id="button-ext-garage" class="toggle-button">
+						<p>ON</p> 
+						<p>OFF</p>
+					</label>
+				</div>
+			</div> 
+		</div>
+	</div>
+</div>

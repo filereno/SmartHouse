@@ -1,0 +1,207 @@
+{% load static %}
+<div class="cam">
+	<div class="cam-int">  
+		<div>
+			<span><svg class="icon-low"><use xlink:href="{% static 'svg/sprites.svg' %}#camera"></use></svg></span>
+			<h6 class="text-test">Interior-Sala</h6>
+		</div>
+		<div class="div-int">
+			<div class="embed-responsive embed-responsive-16by9">
+				<video id="video-int" class="embed-responsive-item" src="{% static 'videos/street.mp4' %}">
+
+				</video>
+			</div>
+		</div>
+
+		<ul>
+			<li>
+				<h5 class="text-test">Liga/Desl.</h5>
+				<div>
+					<input type="checkbox" id="switch-cam-int" class="checkbox-button-on-off" /> 
+					<label for="switch-cam-int" id="button-int" class="toggle-button-on-off">
+						<p>ON</p> 
+						<p>OFF</p>
+					</label>
+				</div>
+			</li>
+			<li>
+				<h5 class="text-test">Conexão</h5>
+				<div id="cam-int-status"></div>
+			</li>
+			<li>
+				<h5 class="text-test">Gravaçao</h5>
+				<div>
+					<input type="checkbox" id="switch-cam-int-start-stop" class="checkbox-button-start-stop" /> 
+					<label for="switch-cam-int-start-stop" class="toggle-button-start-stop">
+						<p>START</p> 
+						<p>STOP</p>
+					</label>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="cam-front">  
+		<div>
+			<span><svg class="icon-low"><use xlink:href="{% static 'svg/sprites.svg' %}#camera"></use></svg></span>
+			<h6 class="text-test">Exterior-Frente</h6>
+		</div>
+		<div class="div-front">
+			<div class="embed-responsive embed-responsive-16by9">
+				<video id="video-front" class="embed-responsive-item" src="{% static 'videos/room.mp4' %}">
+
+				</video>
+			</div>
+		</div>
+
+		<ul>
+			<li>
+				<h5 class="text-test">Liga/Desl.</h5>
+				<div>
+					<input type="checkbox" id="switch-cam-front" class="checkbox-button-on-off" /> 
+					<label for="switch-cam-front" id="button-front" class="toggle-button-on-off">
+						<p>ON</p> 
+						<p>OFF</p>
+					</label>
+				</div>
+			</li>
+			<li>
+				<h5 class="text-test">Conexão</h5>
+				<div id="cam-front-status"></div>
+			</li>
+			<li>
+				<h5 class="text-test">Gravaçao</h5>
+				<div>
+					<input type="checkbox" id="switch-cam-front-start-stop" class="checkbox-button-start-stop" /> 
+					<label for="switch-cam-front-start-stop" class="toggle-button-start-stop">
+						<p>START</p> 
+						<p>STOP</p>
+					</label>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="cam-back">  
+		<div>
+			<span><svg class="icon-low"><use xlink:href="{% static 'svg/sprites.svg' %}#camera"></use></svg></span>
+			<h6 class="text-test">Exterior-Fundos</h6>
+		</div>
+		<div class="div-back">
+			<div class="embed-responsive embed-responsive-16by9">
+				<video id="video-back" class="embed-responsive-item" src="{% static 'videos/street.mp4' %}">
+
+				</video>
+			</div>
+		</div>
+
+		<ul>
+			<li>
+				<h5 class="text-test">Liga/Desl.</h5>
+				<div>
+					<input type="checkbox" id="switch-cam-back" class="checkbox-button-on-off" /> 
+					<label for="switch-cam-back" id="button-back" class="toggle-button-on-off">
+						<p>ON</p> 
+						<p>OFF</p>
+					</label>
+				</div>
+			</li>
+			<li>
+				<h5 class="text-test">Conexão</h5>
+				<div id="cam-back-status"></div>
+			</li>
+			<li>
+				<h5 class="text-test">Gravaçao</h5>
+				<div>
+					<input type="checkbox" id="switch-cam-back-start-stop" class="checkbox-button-start-stop" /> 
+					<label for="switch-cam-back-start-stop" class="toggle-button-start-stop">
+						<p>START</p> 
+						<p>STOP</p>
+					</label>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="cam-side">  
+		<div>
+			<span><svg class="icon-low"><use xlink:href="{% static 'svg/sprites.svg' %}#camera"></use></svg></span>
+			<h6 class="text-test">Exterior-Lateral</h6>
+		</div>
+		<div class="div-side">
+			<div class="embed-responsive embed-responsive-16by9">
+				<video id="video-side" class="embed-responsive-item" src="{% static 'videos/room.mp4' %}">
+				
+				</video>
+			</div>
+		</div>
+
+		<ul>
+			<li>
+				<h5 class="text-test">Liga/Desl.</h5>
+				<div>
+					<input type="checkbox" id="switch-cam-side" class="checkbox-button-on-off" /> 
+					<label for="switch-cam-side" id="button-side" class="toggle-button-on-off">
+						<p>ON</p> 
+						<p>OFF</p>
+					</label>
+				</div>
+			</li>
+			<li>
+				<h5 class="text-test">Conexão</h5>
+				<div id="cam-side-status"></div>
+			</li>
+			<li>
+				<h5 class="text-test">Gravaçao</h5>
+				<div>
+					<input type="checkbox" id="switch-cam-side-start-stop" class="checkbox-button-start-stop" /> 
+					<label for="switch-cam-side-start-stop" class="toggle-button-start-stop">
+						<p>START</p> 
+						<p>STOP</p>
+					</label>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="cam-garage">  
+		<div>
+			<span><svg class="icon-low"><use xlink:href="{% static 'svg/sprites.svg' %}#camera"></use></svg></span>
+			<h6 class="text-test">Exterior-Garage</h6>
+		</div>
+		<div class="div-garage">
+			<div class="embed-responsive embed-responsive-16by9">
+				<video id="video-garage" class="embed-responsive-item" src="{% static 'videos/street.mp4' %}">
+				
+				</video>
+			</div>
+		</div>
+
+		<ul>
+			<li>
+				<h5 class="text-test">Liga/Desl.</h5>
+				<div>
+					<input type="checkbox" id="switch-cam-garage-on-off" class="checkbox-button-on-off" /> 
+					<label for="switch-cam-garage-on-off" id="button-garage" class="toggle-button-on-off">
+						<p>ON</p> 
+						<p>OFF</p>
+					</label>
+				</div>
+			</li>
+			<li>
+				<h5 class="text-test">Conexão</h5>
+				<div id="cam-garage-status"></div>
+			</li>
+			<li>
+				<h5 class="text-test">Gravaçao</h5>
+				<div>
+					<input type="checkbox" id="switch-cam-garage-start-stop" class="checkbox-button-start-stop" /> 
+					<label for="switch-cam-garage-start-stop" class="toggle-button-start-stop">
+						<p>START</p> 
+						<p>STOP</p>
+					</label>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

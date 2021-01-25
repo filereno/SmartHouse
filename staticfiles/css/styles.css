@@ -1,0 +1,1535 @@
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+	font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+body {
+	background-color: rgba(30, 40, 50, 1.0);
+}
+.menu-container {
+	display: grid;
+	grid-template-columns: 60px auto 60px;
+	grid-template-rows: 60px auto;
+	height: 100vh+10px;
+}
+
+header {
+	position: relative;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	grid-column: 1/3;
+	grid-row: 1;
+	background-color: rgb(22, 30, 37);
+	/* color: rgb(15, 156, 230); */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* --------Icone de administração de usuario-------- */
+
+.dropdown {
+	position: absolute;
+	right: 10px;
+	list-style: none;	
+}
+
+.dropdown > svg {
+	fill: rgb(174, 224, 250);
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+}
+
+.dropdown > svg:hover {
+	fill: rgb(15, 156, 230);	
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	border-style: solid;
+	border-radius: 5px;
+	border-width: 1px;
+	border-width: 1.5px;
+	background: rgb(26, 69, 96);
+	box-shadow:inset 0 0 2rem rgba(15,156,230,.30);
+	min-width: 160px;
+	z-index: 1;	
+}
+
+.dropdown-content a:hover .account, .dropdown-content a:hover .logout, .dropdown-content a:hover .register   {
+	color: rgb(15, 156, 230);
+
+}
+
+.dropdown-content a{
+	display: block;
+	padding: 10px;
+	text-decoration: none;
+	white-space: nowrap;
+	color: rgb(174, 224, 250);
+	font-weight:400;
+	font-size: medium;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+	right: -5px;
+}
+
+/* ----------------Logotipo da casa inteligente no topo----------------- */
+
+.menu-container > header > div > a {
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	cursor: pointer;
+	text-decoration: none;
+	
+}
+
+.house {
+	fill: rgba(15,156,230,.45);
+	width: 40px;
+	height: 40px;
+}
+
+.menu-container > header > div > a > h3 {
+	margin: 0 5px;
+}
+/* -----------------Menu hamburguer para o modo mobile---------------------- */
+
+.menu-bar {
+
+	position: sticky;
+	top: 0;
+	right: 0;
+	z-index: 1;
+	grid-column: 3;
+	grid-row: 1;
+	background-color: rgb(22, 30, 37);
+	font-size: 24px;
+	width: 60px;
+	height: 60px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.menu-bar > svg {
+	fill: rgb(174, 224, 250);
+	width: 35px;
+	height: 35px;
+}
+
+.menu-bar:hover{
+	background-color: rgb(15, 156, 230);
+} 
+
+#switch-menu {
+	grid-column: 3;
+	grid-row: 1;
+	display: none; 
+}
+
+#switch-menu:checked ~ aside {
+	display: grid;
+	width: 200px;
+}
+
+/* -----------------------Sidebar-------------------------- */
+
+aside {
+	display: none;
+	grid-column: 1;
+	grid-row: 2; 
+	position: fixed;
+	height: 100%;
+	top: 60px;
+	width: 60px; 
+	background: rgb(26, 69, 96);
+	box-shadow:inset 0 0 2rem rgba(15,156,230,.30);
+	transition: 0.5s;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.menu-container > aside > ul > li > a {
+	text-decoration: none;
+}
+
+aside > ul > li {
+	/* position: relative; */
+	width: 100%;
+	list-style: none;	
+}
+
+aside > ul > li > a:hover .title, aside > ul > li > a:hover > span:nth-child(1) > svg {
+	color: rgb(15, 156, 230);
+	fill: rgb(15, 156, 230);
+}
+
+aside > ul > li > a {
+	/* position: relative; */
+	display: block;
+	width: 100%;
+	display: flex;
+}
+
+li.last > a > span:nth-child(1) > svg {
+	/* fill: rgb(174, 224, 250); */
+	width: 40px;
+}
+
+li.last > a > span:nth-child(1) {
+	display: block;
+	min-width: 60px;
+	height: 60px;
+	line-height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+aside > ul > li > a .title{
+	/* position: relative; */
+	display: block;
+	padding: 0 10px;
+	height: 60px;
+	line-height: 60px;
+	text-align: start;
+	white-space: nowrap;
+	color: rgb(174, 224, 250);
+	font-weight:400;
+}
+
+/*------------------Container do main start-----------------*/
+main {
+	grid-row: 2;
+	grid-column: 1/-1;
+}
+.home{
+	grid-column: 1/-1;
+	grid-row: 2;
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-template-rows: 350px 300px auto auto;
+	grid-gap: 25px;
+	margin-top: 20px;
+	margin-bottom: 50px;
+	margin-left: 15px;
+	margin-right: 15px;
+	grid-template-areas: 
+		"fire fire"
+		"garage garage"
+		"light-int light-int"
+		"light-ext light-ext"
+	
+}
+
+.cam {
+	grid-column: 1/-1;
+	grid-row: 2;
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto auto auto auto auto;
+	grid-gap: 25px;
+	margin-top: 20px;
+	margin-bottom: 50px;
+	margin-left: 15px;
+	margin-right: 15px;
+	grid-template-areas: 
+		"cam-int"
+		"cam-front"
+		"cam-back"
+		"cam-side"
+		"cam-garage"
+}
+/*------------------Container do main stop-----------------*/
+
+/* ----------------CSS da pagina home.html start---------------- */
+
+/* Segurança */
+.home .fire-system {
+
+	display: grid;
+	grid-template-rows: 50px auto auto auto;
+	grid-gap: 10px;
+	grid-area: fire;
+}
+.fire-system > h2 {
+	grid-row: 1;
+	height: 100%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-start;
+}
+
+.alarm {
+	grid-row: 2;
+	display: grid;
+	grid-template-columns: auto 25%;
+}
+
+.alarm > div:nth-child(1) {
+	grid-column: 1;
+	display: flex;
+	flex-direction: row;
+}
+
+.alarm > div:nth-child(2) {
+	/* background-color: darkorange; */
+	grid-column: 2;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.alarm > div:nth-child(1) > span {
+	/* background-color: tomato; */
+	width: 55px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.alarm > div:nth-child(1) > span > svg{
+	fill:rgba(15,156,230,.45);
+	height: 50px;
+}
+
+.alarm > div:nth-child(1) > div {
+	/* background-color: aqua; */
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	padding-left: 15px;
+
+}
+.status-alarm{
+	color: green;
+}
+
+
+
+.smoke {
+	grid-row: 3;
+	display: grid;
+	grid-template-columns: auto 25%;
+}
+
+.smoke > div:nth-child(1) {
+	grid-column: 1;
+	display: flex;
+	flex-direction: row;
+}
+
+.smoke > div:nth-child(2) {
+	/* background-color: darkorange; */
+	grid-column: 2;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.smoke > div:nth-child(1) > span {
+	/* background-color: tomato; */
+	width: 55px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.smoke > div:nth-child(1) > span > svg{
+	fill:rgba(15,156,230,.45);
+	height: 50px;
+}
+
+.smoke > div:nth-child(1) > div {
+	/* background-color: aqua; */
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	padding-left: 15px;
+
+}
+.status-smoke{
+	color: green;
+}
+.gas {
+	grid-row: 4;
+	display: grid;
+	grid-template-columns: auto 25%;
+}
+
+.gas > div:nth-child(1) {
+	grid-column: 1;
+	display: flex;
+	flex-direction: row;
+}
+
+.gas > div:nth-child(2) {
+	/* background-color: darkorange; */
+	grid-column: 2;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.gas > div:nth-child(1) > span {
+	/* background-color: tomato; */
+	width: 55px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.gas > div:nth-child(1) > span > svg{
+	fill:rgba(15,156,230,.45);
+	height: 50px;
+}
+
+.gas > div:nth-child(1) > div {
+	/* background-color: aqua; */
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	padding-left: 15px;
+
+}
+.status-gas{
+	color: green;
+}
+/* Garagem */
+
+.home .garage {
+
+	display: grid;
+	grid-template-rows: 50px auto auto;
+	grid-gap: 10px;
+	grid-area: garage;
+}
+
+.garage > h2 {
+	grid-row: 1;
+	display: flex;
+	height: 100%;
+	align-items: flex-end;
+	justify-content: flex-start;
+}
+
+.gate-garage {
+	grid-row: 2;
+	display: grid;
+	grid-template-columns: auto 25%;
+	grid-template-rows: auto 25%;
+
+}
+
+.gate-garage > div:nth-child(1) {
+	display: flex;
+	flex-direction: row;
+	/* background-color: darkgray; */
+	
+}
+
+.gate-garage > div:nth-child(1) > span {
+	/* background-color: indigo; */
+	width: 55px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.gate-garage > div:nth-child(1) > span > svg {
+	fill:rgba(15,156,230,.45);
+	height: 50px;
+}
+
+.gate-garage > div:nth-child(1) > div {
+	/* background-color: antiquewhite; */
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 100%;
+	padding-left: 15px;
+}
+
+.gate-garage > div:nth-child(3) {
+	/* background-color: blueviolet; */
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.load-gate {
+	grid-row: 2;
+	grid-column: 1/-1;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.progress-gate {
+	height: 10px;
+	width: 100%;
+	background-color: rgb(22, 30, 37);
+}
+
+#bar-gate {
+	height: 100%;
+	width: 10%;
+	background-color: rgb(15, 156, 230);
+	color: rgb(15, 156, 230);
+	box-shadow: 0 0 12px rgb(15, 156, 230);
+}
+
+.gate-garage > div:nth-child(1) > div:nth-child(2) > h6 {
+	color: green;
+}
+
+.grid-garage {
+	grid-row: 3;
+	display: grid;
+	grid-template-columns: auto 25%;
+	grid-template-rows: auto 25%;
+}
+
+.grid-garage > div:nth-child(1) {
+	display: flex;
+	flex-direction: row;
+	/* background-color: darkgray; */
+}
+
+.grid-garage > div:nth-child(1) > span {
+	/* background-color: indigo; */
+	width: 55px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.grid-garage > div:nth-child(1) > span > svg {
+	fill:rgba(15,156,230,.45);
+	height: 50px;
+}
+
+.grid-garage > div:nth-child(1) > div {
+	/* background-color: antiquewhite; */
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 100%;
+	padding-left: 15px;
+}
+
+.grid-garage > div:nth-child(3){
+	/* background-color: blueviolet; */
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.load-grid {
+	grid-row: 2;
+	grid-column: 1/-1;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.progress-grid {
+	height: 10px;
+	width: 100%;
+	background-color: rgb(22, 30, 37);
+}
+
+#bar-grid {
+	height: 100%;
+	width: 10%;
+	background-color: rgb(15, 156, 230);
+	color: rgb(15, 156, 230);
+	box-shadow: 0 0 12px rgb(15, 156, 230);
+}
+
+div.load-grid {
+	grid-row: 2;
+	grid-column: 1/-1;
+}
+
+.grid-garage > div:nth-child(1) > div:nth-child(2) > h6 {
+	color: green;
+}
+/* Controle das luzes internas */
+
+.home .light-int {
+	padding: 20px;
+	display: grid;
+	grid-template-rows: 50px auto;
+	grid-area: light-int;
+	
+}
+
+.light-int > h2 {
+	/* background-color: khaki; */
+	grid-row: 1;
+	grid-column: 1/-1;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-start;	
+}
+
+#list-int {
+	grid-row: 2;
+	/* border-bottom: 1.5px solid rgba(15, 156, 230, 0.40); */
+}
+
+#list-int > ul {
+	/* background-color: antiquewhite; */
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#list-int > ul > li {
+	/* background-color: aqua; */
+	display: grid;
+	height: 70px;
+	grid-template-columns: auto 25%;
+	grid-template-rows: auto;
+	
+}
+
+#list-int > ul> li > span:nth-child(1) {
+	/* background-color: blueviolet; */
+	grid-column: 1;
+	grid-row: 1;
+	width: 30px;
+	height: 100%;
+	/* font-size: 22px; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#list-int > ul > li > span:nth-child(1) > svg {
+	height: 50px;
+}
+
+#list-int > ul > li > h5 {
+	/* background-color: burlywood; */
+	grid-column: 1;
+	grid-row: 1;
+	height: 100%;
+	padding-left: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+#list-int > ul> li > div {
+	/* background-color: olive; */
+	grid-column: 2;
+	grid-row: 1;
+	height: 100%;
+	display: flex; 
+	align-items: center;
+	justify-content: flex-end;
+}
+
+/* Controle das luzes externas */
+
+.home .light-ext {
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: auto;
+	grid-template-rows: 50px auto;
+	display: flex;
+	flex-direction: column;
+		
+	grid-area: light-ext;
+}
+
+.light-ext > h2 {
+	grid-row: 1;
+	margin: 0 auto;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items:  flex-end;
+	justify-content: flex-start;
+}
+
+.light-ext > div {
+	grid-row: 2;
+	grid-column: 1;
+	display: grid;
+	grid-template-columns: auto 25%;
+	padding: 15px;
+}
+
+.light-ext > div > div:nth-child(1) {
+	grid-column: 1;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+}
+
+.light-ext > div > div:nth-child(2) {
+	grid-column: 2;
+	min-height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.light-ext > div > div:nth-child(1) > span > svg {
+	height: 40px;
+	width: 40px;
+}
+
+.light-ext > div > div:nth-child(1) > h5 {
+	margin: 0 10px;
+}
+
+/* ---------------------CSS da pagina home.html end-------------------- */
+
+/* ---------------------CSS da pagina cam.html start-------------------- */
+
+/* Camera interior start */
+.cam-int {
+	grid-area: cam-int;
+}
+.cam-int > div:nth-child(1) {
+
+	border: 1.5px solid;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-color: rgba(15, 156, 230, 0.40);
+	background-color: rgba(28, 46, 59, 1.0);
+	box-shadow: inset 0 0 25px 0px rgba(15,156,230,.25);
+	display: flex;
+	flex-direction:row;
+	justify-content: flex-start;
+	align-items: center;
+	
+}
+
+.cam-int > div > .text-test {
+
+	height: 30px;
+	font-size: 22px;
+	padding-left: 10px;
+	
+}
+
+.cam-int > div:nth-child(1) > span:nth-child(1) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 30px;
+	width: 30px;
+	font-size: 22px;
+	
+}
+
+.cam-int > ul {
+
+	border: 1.5px solid;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-color: rgba(15, 156, 230, 0.40);
+	background-color: rgba(28, 46, 59, 1.0);
+	box-shadow: inset 0 0 25px 0px rgba(15,156,230,.25);
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 200px;
+	
+}
+
+.cam-int > ul > li {
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;	
+	height: 100%;
+	
+}
+.cam-int > ul > li> h5{
+	font-size: 22px;
+}
+
+/* Camera interior end  */
+
+/* Camera exterior frente start */
+.cam-front {
+	grid-area: cam-front;
+}
+.cam-front > div:nth-child(1) {
+
+	border: 1.5px solid;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-color: rgba(15, 156, 230, 0.40);
+	background-color: rgba(28, 46, 59, 1.0);
+	box-shadow: inset 0 0 25px 0px rgba(15,156,230,.25);
+	display: flex;
+	flex-direction:row;
+	justify-content: flex-start;
+	align-items: center;
+
+}
+
+.cam-front > div > .text-test {
+
+	height: 30px;
+	font-size: 22px;
+	padding-left: 10px;
+	
+}
+
+.cam-front > div:nth-child(1) > span:nth-child(1) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 30px;
+	width: 30px;
+	font-size: 22px;
+	
+}
+
+.cam-front > ul {
+
+	border: 1.5px solid;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-color: rgba(15, 156, 230, 0.40);
+	background-color: rgba(28, 46, 59, 1.0);
+	box-shadow: inset 0 0 25px 0px rgba(15,156,230,.25);
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 200px;
+	
+}
+
+.cam-front > ul > li {
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;	
+	height: 100%;
+	
+}
+.cam-front > ul > li> h5{
+	font-size: 22px;
+}
+
+/* Camera exterior frente end  */
+
+/* Camera exterior fundos start */
+.cam-back {
+	grid-area: cam-back;
+}
+.cam-back > div:nth-child(1) {
+
+	border: 1.5px solid;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-color: rgba(15, 156, 230, 0.40);
+	background-color: rgba(28, 46, 59, 1.0);
+	box-shadow: inset 0 0 25px 0px rgba(15,156,230,.25);
+	display: flex;
+	flex-direction:row;
+	justify-content: flex-start;
+	align-items: center;
+
+}
+
+.cam-back > div > .text-test {
+
+	height: 30px;
+	font-size: 22px;
+	padding-left: 10px;
+	
+}
+
+.cam-back > div:nth-child(1) > span:nth-child(1) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 30px;
+	width: 30px;
+	font-size: 22px;
+	
+}
+
+.cam-back > ul {
+
+	border: 1.5px solid;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-color: rgba(15, 156, 230, 0.40);
+	background-color: rgba(28, 46, 59, 1.0);
+	box-shadow: inset 0 0 25px 0px rgba(15,156,230,.25);
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 200px;
+	
+}
+
+.cam-back > ul > li {
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;	
+	height: 100%;
+	
+}
+.cam-back > ul > li> h5{
+	font-size: 22px;
+}
+
+/* Camera exterior fundos end  */
+
+/* Camera exterior lateral start */
+.cam-side {
+	grid-area: cam-side;
+}
+.cam-side > div:nth-child(1) {
+
+	border: 1.5px solid;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-color: rgba(15, 156, 230, 0.40);
+	background-color: rgba(28, 46, 59, 1.0);
+	box-shadow: inset 0 0 25px 0px rgba(15,156,230,.25);
+	display: flex;
+	flex-direction:row;
+	justify-content: flex-start;
+	align-items: center;
+	
+}
+
+.cam-side > div > .text-test {
+	height: 30px;
+	font-size: 22px;
+	padding-left: 10px;
+}
+
+.cam-side > div:nth-child(1) > span:nth-child(1) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 30px;
+	width: 30px;
+	font-size: 22px;
+	
+}
+
+.cam-side > ul {
+
+	border: 1.5px solid;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-color: rgba(15, 156, 230, 0.40);
+	background-color: rgba(28, 46, 59, 1.0);
+	box-shadow: inset 0 0 25px 0px rgba(15,156,230,.25);
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 200px;
+	
+}
+
+.cam-side > ul > li {
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;	
+	height: 100%;
+	
+}
+.cam-side > ul > li> h5{
+	font-size: 22px;
+}
+
+/* Camera exterior lateral end  */
+
+/* Camera exterior garage start */
+.cam-garage {
+	grid-area: cam-garage;
+}
+.cam-garage > div:nth-child(1) {
+	border: 1.5px solid;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-color: rgba(15, 156, 230, 0.40);
+	background-color: rgba(28, 46, 59, 1.0);
+	box-shadow: inset 0 0 25px 0px rgba(15,156,230,.25);
+	display: flex;
+	flex-direction:row;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.cam-garage > div > .text-test {
+	height: 30px;
+	font-size: 22px;
+	padding-left: 10px;
+}
+
+.cam-garage > div:nth-child(1) > span:nth-child(1) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 30px;
+	width: 30px;
+	font-size: 22px;	
+}
+
+.cam-garage > ul {
+
+	border: 1.5px solid;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-color: rgba(15, 156, 230, 0.40);
+	background-color: rgba(28, 46, 59, 1.0);
+	box-shadow: inset 0 0 25px 0px rgba(15,156,230,.25);
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 200px;
+}
+
+.cam-garage > ul > li {
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;	
+	height: 100%;
+	
+}
+.cam-garage > ul > li> h5{
+	font-size: 22px;
+}
+
+#cam-int-status {
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	
+	/* Led verde */
+	background-color: rgb(171, 255, 0);
+	box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
+	
+	/* Led vermelho */
+	/* background-color: #F00;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 12px; */
+	 
+	margin-right: 25px;
+}
+
+#cam-front-status {
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	
+	/* Led verde */
+	background-color: rgb(171, 255, 0);
+	box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
+	
+	/* Led vermelho */
+	/* background-color: #F00;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 12px; */
+	 
+	margin-right: 25px;
+}
+
+#cam-back-status {
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	
+	/* Led verde */
+	background-color: rgb(171, 255, 0);
+	box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
+	
+	/* Led vermelho */
+	/* background-color: #F00;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 12px; */
+	 
+	margin-right: 25px;
+}
+
+#cam-side-status {
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	
+	/* Led verde */
+	background-color: rgb(171, 255, 0);
+	box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
+	
+	/* Led vermelho */
+	/* background-color: #F00;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 12px; */
+	 
+	margin-right: 25px;
+}
+
+#cam-garage-status {
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	
+	/* Led verde */
+	background-color: rgb(171, 255, 0);
+	box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
+	
+	/* Led vermelho */
+	/* background-color: #F00;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 12px; */
+	 
+	margin-right: 25px;
+}
+/* Camera exterior garage end  */
+
+/* ---------------------CSS da pagina cam.html end-------------------- */
+
+/* -----------------Cores e planos de fundo start-------------------- */
+.background-standard {
+	padding: 10px;
+	border-style: solid;
+	border-radius: 5px;
+	border-width: 1.5px;
+	border-color: rgba(15, 156, 230, 0.40);
+	/* border-color: rgba(221,0,74,.8); */
+	background-color: rgba(28, 46, 59, 1.0);
+	box-shadow: inset 0 0 25px 0px rgba(15,156,230,.25);
+	/* box-shadow: inset 0 0 25px 5px rgba(221,0,74,.8); */
+}
+/* -----------------Cores e planos de fundo end-------------------- */
+
+
+/* -----------------Cores dos icones e fontes start-------------- */
+h2, h3 {
+	color:rgba(15,156,230,.45);
+}
+
+h5 {
+	color: rgb(15, 156, 230);
+}
+
+.icon-up {
+	fill:rgb(174, 224, 250);
+}
+
+.icon-low {
+	fill:rgba(15,156,230,.45);
+}
+/* -----------------Cores dos icones e fontes end-------------- */
+
+/* ----------------------Buttons start---------------------------- */
+
+/* Button on/off da pagina home.html start*/
+.toggle-button { 
+	position : relative ; 
+	display : inline-block; 
+	width : 70px; 
+	height : 29px; 
+	/* background-color: red;  */
+	background-color: rgba(28, 46, 59, 1.0); 
+	border-radius: 30px; 
+	border: 1px solid rgba(15, 156, 230, 0.40); 
+	margin:0 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	cursor: pointer;
+  }  
+  
+ .toggle-button:after { 
+	content: ''; 
+	position: absolute; 
+	width: 25px; 
+	height: 25px; 
+	border-radius: 50%; 
+	background-color: rgba(15,156,230,.45); 
+	top: 1px;  
+	left: 1px; 
+	transition:  all 0.3s; 
+	
+  } 
+
+ .checkbox-button:checked + .toggle-button::after{ 
+	left : 42px; 
+	background-color: rgba(15, 156, 230);
+  } 
+	    
+ .checkbox-button:checked + .toggle-button  { 
+	background-color: rgba(28, 46, 59, 1.0); 
+	/* background-color: green;  */
+	border: 1px solid rgba(15, 156, 230);
+	box-shadow: 0 0 16px rgba(15,156,230,.45);
+  } 
+  
+  .checkbox-button:checked + .toggle-button > p{ 
+	/* color: rgba(15, 156, 230); */
+	color: rgb(174, 224, 250);
+  } 
+
+  .checkbox-button:checked + .toggle-button > p:nth-child(2) { 
+	/* color: rgba(15, 156, 230); */
+	color: rgba(174, 224, 250,.0);
+  }
+
+  .checkbox-button:not(:checked) + .toggle-button > p:nth-child(1){ 
+	/* color: rgba(15, 156, 230); */
+	color: rgba(15,156,230,.0);
+  } 
+
+.checkbox-button {  
+	display : none; 
+  } 
+
+.toggle-button > p{ 
+	font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; 
+	font-weight: bold; 
+	font-size: x-small;
+	height: 100%;
+	display: flex;
+	align-items: center;	
+	padding-left: 5px;
+	color: rgba(15,156,230,.45);
+	user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+  
+} 
+/* Button on/off da pagina home.html stop*/
+
+/* Button on/off da pagina cam.html start*/
+.toggle-button-on-off { 
+	position : relative ; 
+	display : inline-block; 
+	width : 70px; 
+	height : 29px; 
+	/* background-color: red;  */
+	background-color: rgba(28, 46, 59, 1.0); 
+	border-radius: 30px; 
+	border: 1px solid rgba(15, 156, 230, 0.40); 
+	margin:0 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	cursor: pointer;
+}  
+
+.toggle-button-on-off:after { 
+	content: ''; 
+	position: absolute; 
+	width: 25px; 
+	height: 25px; 
+	border-radius: 50%; 
+	/* background-color: gray;  */
+	background-color: rgba(15,156,230,.45); 
+	top: 1px;  
+	left: 1px; 
+	transition:  all 0.3s; 
+	
+} 
+
+.checkbox-button-on-off:checked + .toggle-button-on-off::after{ 
+	left : 42px; 
+	background-color: rgba(15, 156, 230);
+} 
+	    
+.checkbox-button-on-off:checked + .toggle-button-on-off  { 
+	background-color: rgba(28, 46, 59, 1.0); 
+	/* background-color: green;  */
+	border: 1px solid rgba(15, 156, 230);
+	box-shadow: 0 0 16px rgba(15,156,230,.45);
+} 
+  
+.checkbox-button-on-off:checked + .toggle-button-on-off > p{ 
+	/* color: rgba(15, 156, 230); */
+	color: rgb(174, 224, 250);
+} 
+
+.checkbox-button-on-off:checked + .toggle-button-on-off > p:nth-child(2) { 
+	/* color: rgba(15, 156, 230); */
+	color: rgba(174, 224, 250,.0);
+}
+
+.checkbox-button-on-off:not(:checked) + .toggle-button-on-off > p:nth-child(1){ 
+	/* color: rgba(15, 156, 230); */
+	color: rgba(15,156,230,.0);
+} 
+
+.checkbox-button-on-off {  
+	display : none; 
+} 
+
+.toggle-button-on-off > p{ 
+	font-family: Arial, Helvetica, sans-serif; 
+	font-weight: bold; 
+	font-size: x-small;
+	height: 100%;
+	display: flex;
+	align-items: center;	
+	padding-left: 5px;
+	color: rgba(15,156,230,.45);
+	user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+} 
+
+/* Button on/off da pagina cam.html stop*/
+
+/* Button open/close start*/
+.toggle-button-oc { 
+	position : relative ; 
+	display : inline-block; 
+	width : 80px; 
+	height : 40px; 
+	/* background-color: red;  */
+	background-color: rgba(28, 46, 59, 1.0); 
+	border-radius: 3px; 
+	border: 1px solid rgba(15, 156, 230, 0.40); 
+	margin:0 auto;
+	display: flex;
+	flex-direction: row;
+	cursor: pointer;
+  }  
+  
+ .checkbox-button-oc:checked + .toggle-button-oc::after{ 
+	left : 79px; 
+	background-color: rgba(15, 156, 230);
+  } 
+	    
+ .checkbox-button-oc:checked + .toggle-button-oc  { 
+	background-color: rgba(28, 46, 59, 1.0); 
+	/* background-color: green;  */
+	border: 1px solid rgba(15, 156, 230);
+	box-shadow: 0 0 16px rgba(15,156,230,.45);
+  } 
+  
+  .checkbox-button-oc:checked + .toggle-button-oc > p{ 
+	/* color: rgba(15, 156, 230); */
+	color: rgb(174, 224, 250);
+	margin-left: 15px;	
+  } 
+
+  .checkbox-button-oc:checked + .toggle-button-oc > p:nth-child(2) { 
+	/* color: rgba(15, 156, 230); */
+	color: rgba(174, 224, 250,.0);
+  } 
+
+  .checkbox-button-oc:not(:checked) + .toggle-button-oc > p:nth-child(1){ 
+	/* color: rgba(15, 156, 230); */
+	color: rgba(15,156,230,.0);
+	margin-right: -60px;
+  }
+
+ .checkbox-button-oc {  
+	display : none; 
+  } 
+
+ .toggle-button-oc > p{ 
+	font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; 
+	font-weight: bold; 
+	font-size: large;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	/* padding-left: 5px; */
+	color: rgba(15,156,230,.45);
+	user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+  } 
+/* Button open/close end*/
+
+/* Button start/stop start*/
+.toggle-button-start-stop { 
+	position : relative ; 
+	display : inline-block; 
+	width : 90px; 
+	height : 30px; 
+	/* background-color: red;  */
+	background-color: rgba(28, 46, 59, 1.0); 
+	border-radius: 3px; 
+	border: 1px solid rgba(15, 156, 230, 0.40); 
+	margin:0 auto;
+	display: flex;
+	flex-direction: row;
+	cursor: pointer;
+  }  
+  
+ .toggle-button-start-stop:after { 
+	content: ''; 
+	position: absolute; 
+	width: 10px; 
+	height: 26px; 
+	border-radius: 1.5px; 
+	background-color: rgba(15,156,230,.45); 
+	top: 1px;  
+	left: 1px; 
+	transition:  all 0.2s; 
+	
+  } 
+
+ .checkbox-button-start-stop:checked + .toggle-button-start-stop::after{ 
+	left : 77px; 
+	background-color: rgba(15, 156, 230);
+  } 
+	    
+ .checkbox-button-start-stop:checked + .toggle-button-start-stop  { 
+	background-color: rgba(28, 46, 59, 1.0); 
+	/* background-color: green;  */
+	border: 1px solid rgba(15, 156, 230);
+	box-shadow: 0 0 16px rgba(15,156,230,.45);
+  } 
+  
+  .checkbox-button-start-stop:checked + .toggle-button-start-stop > p{ 
+	/* color: rgba(15, 156, 230); */
+	color: rgb(174, 224, 250);
+	margin-left: 15px;	
+  } 
+
+  .checkbox-button-start-stop:checked + .toggle-button-start-stop > p:nth-child(2) { 
+	/* color: rgba(15, 156, 230); */
+	color: rgba(174, 224, 250,.0);
+  } 
+
+  .checkbox-button-start-stop:not(:checked) + .toggle-button-start-stop > p:nth-child(1){ 
+	/* color: rgba(15, 156, 230); */
+	color: rgba(15,156,230,.0);
+	margin-right: -60px;
+  } 
+
+ .checkbox-button-start-stop {  
+	display : none; 
+  } 
+
+ .toggle-button-start-stop > p{ 
+	font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; 
+	font-weight: bold; 
+	font-size: large;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	/* padding-left: 5px; */
+	color: rgba(15,156,230,.45);
+	user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+  } 
+/* Button start/stop end*/
+
+/* ----------------------Buttons end---------------------------- */
+
+@media screen and (min-width: 768px) and (orientation: landscape){
+
+	.menu-bar {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	header{
+		grid-column: 2/-1;
+		grid-row: 1;
+	}
+
+	aside {
+		display: grid;
+	}
+
+	main {
+		grid-row: 2;
+		grid-column: 2/-1;
+	}
+
+	.home {
+		grid-gap: 50px 100px;
+		margin-top: 20px;
+		margin-bottom: 50px;
+		margin-left: 15px;
+		margin-right: 15px;
+		grid-column: 2/-1;
+		grid-template-rows: 350px 600px;
+		grid-template-areas: 
+			"fire garage"
+			"light-int light-ext"
+	}
+
+	.cam {
+		grid-column: 2/-1;
+		grid-template-columns: auto auto;
+		grid-template-rows: auto auto auto;
+		grid-gap: 10px 20px;
+		grid-template-areas: 
+		"cam-int cam-front"
+		"cam-back cam-side"
+		"cam-garage ."		
+	}
+
+	.home .light-ext {
+		max-height: 400px;	
+	}
+}	

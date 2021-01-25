@@ -1,0 +1,1 @@
+web: gunicorn smarthouse.wsgi --log-file -
